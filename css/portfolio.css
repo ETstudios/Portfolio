@@ -1,0 +1,65 @@
+/* Imports */
+@import url('../fonts/Merriweather-Light.ttf');
+@import url('../fonts/Merriweather-Regular.ttf');
+@import url('../fonts/Merriweather-Bold.ttf');
+@import url('../fonts/Mukta-Regular.ttf');
+@import url('../fonts/Mukta-Medium.ttf');
+@import url('../fonts/Mukta-Bold.ttf');
+
+/* General */
+:root {
+    --lapis-lazuli: #085888ff;
+    --mantis: #84c662ff;
+    --lavender-floral: #b084ccff;
+    --black: #110b11ff;
+    --blue-jeans: #4bb3fdff;
+}
+* {  
+    margin: 0;
+    padding: 0;
+    font-family: 'Mukta', serif;
+}
+html, body {
+    height: 100%;
+    width: 100%;
+}
+body { 
+    padding: 10px; 
+}
+p {
+    font-size: 1em;    
+    font-weight: 400;
+}
+blockquote {
+    opacity: 0.8;
+    font-weight: 200;
+    font-style: italic;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather';
+    font-weight: 600;
+}
+a { text-decoration: none; }
+a, a:visited, a:focus {  }
+a:active, a:hover {  }
+footer a:hover { text-decoration: underline; }
+.uppercase { text-transform: uppercase; }
+.center-text { text-align: center; }
+.clear { 
+    clear: both;
+    margin-bottom: 20px; 
+}
+
+
+/* Portfolio Design */
+
+
+
+/* Queries */
+@media only screen and (min-width: 0px) and (max-width: 600px) {
+    
+}
+
+@media only screen and (min-width: 601px) and (max-width: 800px) {
+    
+}
