@@ -1,10 +1,6 @@
 /* Imports */
-    @import url('../fonts/Merriweather-Light.ttf');
-    @import url('../fonts/Merriweather-Regular.ttf');
-    @import url('../fonts/Merriweather-Bold.ttf');
-    @import url('../fonts/Mukta-Regular.ttf');
-    @import url('../fonts/Mukta-Medium.ttf');
-    @import url('../fonts/Mukta-Bold.ttf');
+    @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500;600&display=swap');
 
 /* General */
     :root {
@@ -92,7 +88,7 @@
         margin-right: 80px;
     }    
     #menu ul li a {
-        font-family: 'Mukta';
+        font-family: 'Mukta', sans-serif;
         font-size: 1.4em;
         font-weight: 400;
     }
