@@ -1,65 +1,188 @@
 /* Imports */
-@import url('../fonts/Merriweather-Light.ttf');
-@import url('../fonts/Merriweather-Regular.ttf');
-@import url('../fonts/Merriweather-Bold.ttf');
-@import url('../fonts/Mukta-Regular.ttf');
-@import url('../fonts/Mukta-Medium.ttf');
-@import url('../fonts/Mukta-Bold.ttf');
+    @import url('../fonts/Merriweather-Light.ttf');
+    @import url('../fonts/Merriweather-Regular.ttf');
+    @import url('../fonts/Merriweather-Bold.ttf');
+    @import url('../fonts/Mukta-Regular.ttf');
+    @import url('../fonts/Mukta-Medium.ttf');
+    @import url('../fonts/Mukta-Bold.ttf');
 
 /* General */
-:root {
-    --lapis-lazuli: #085888ff;
-    --mantis: #84c662ff;
-    --lavender-floral: #b084ccff;
-    --black: #110b11ff;
-    --blue-jeans: #4bb3fdff;
-}
-* {  
-    margin: 0;
-    padding: 0;
-    font-family: 'Mukta', serif;
-}
-html, body {
-    height: 100%;
-    width: 100%;
-}
-body { 
-    padding: 10px; 
-}
-p {
-    font-size: 1em;    
-    font-weight: 400;
-}
-blockquote {
-    opacity: 0.8;
-    font-weight: 200;
-    font-style: italic;
-}
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Merriweather';
-    font-weight: 600;
-}
-a { text-decoration: none; }
-a, a:visited, a:focus {  }
-a:active, a:hover {  }
-footer a:hover { text-decoration: underline; }
-.uppercase { text-transform: uppercase; }
-.center-text { text-align: center; }
-.clear { 
-    clear: both;
-    margin-bottom: 20px; 
-}
+    :root {
+        --lapis-lazuli: #085888;
+        --mantis: #84c662;
+        --lavender-floral: #b084cc;
+        --black: #110b11;
+        --blue-jeans: #4bb3fd;
+    }
+    * {  
+        margin: 0;
+        padding: 0;
+        font-family: 'Merriweather', serif;
+    }
+    html, body {
+        height: 100%;
+        width: 100%;
+    }
+    p {
+        font-size: 1em;    
+        font-weight: 400;
+    }
+    blockquote {
+        opacity: 0.8;
+        font-weight: 200;
+        font-style: italic;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Mukta', sans-serif;
+        font-weight: 600;
+    }
+    a { text-decoration: none; }
+    a, a:visited, a:focus {  }
+    a:active, a:hover {  }
+    footer a:hover { text-decoration: underline; }
+    .uppercase { text-transform: uppercase; }
+    .center-text { text-align: center; }
+    .clear { 
+        clear: both;
+        margin-bottom: 20px; 
+    }
 
 
 /* Portfolio Design */
+    .skip {
+        position: absolute;
+        top: 0;
+        opacity: 0;
+    }
+    .hero { width: 100%; }
 
+
+/* Header */
+    header {
+        background-image: url('../img/header.jpg');
+        background-position: 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        padding: 20px;
+        color: #fff;
+        overflow-y: hidden;
+        box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2);
+    }
+    header .info {
+        margin-top: 40px;
+        position: relative;
+        bottom: 0;
+    }
+    header .info img {
+        position: relative;
+        bottom: -54px;
+    }
+    header .info .bio { margin-top: 6%;  }
+    header .info .bio p { font-size: 1.2em; }
+    header .info .bio h2, header .info .bio p, header a.ghost { 
+        display: inline-block;
+        margin: 20px 0; 
+    }
+    header nav { margin-top: 10px; }
+    #menu {  float: right; }
+    #menu ul li {
+        list-style: none;
+        float: left;
+        margin-right: 80px;
+    }    
+    #menu ul li a {
+        font-family: 'Mukta';
+        font-size: 1.4em;
+        font-weight: 400;
+    }
+    nav a, nav a:active, nav a:visited { color: #fff; }
+    nav a:hover, nav a:focus { color: rgba(255, 255, 255, 0.856); }
+    nav a:hover::after, a.active::after {
+        content: " ";
+        display: block;
+        width: 100%;
+        height: 3px;
+        margin-top: 1px;
+        background-color: #fff;
+    }
+    #menu-toggle {
+        font-size: 2.4em;
+        text-align: right;
+        display: none;
+    }
+    .menu-opened {
+        z-index: 1;
+        position: fixed;
+        left: 0;
+        top: 0;
+        padding: 14px;
+        width: 100%;
+        height: 100%;
+        background:  #fff;
+        color: var(--black);
+    }
+    .menu-opened a, .menu-opened a:visited { color: var(--black); }
+    .menu-opened a:active, .menu-opened a:focus, .menu-opened a:hover { color: var(--lapis-lazuli); }
+    header a.ghost {
+        border: 2px solid #fff;
+        border-radius: 15px;
+        color: #fff;
+        padding: 10px 30px;
+        font-family: 'Mukta', sans-serif;
+        text-align: center;
+        font-weight: 500;
+    }
+    header a.ghost:hover, header a.ghost:focus {
+        background-color: #fff;
+        color: var(--lapis-lazuli);
+        transition: background-color 0.5s, color 0.5s;
+    }
 
 
 /* Queries */
-@media only screen and (min-width: 0px) and (max-width: 600px) {
-    
-}
+    @media only screen and (min-width: 0px) and (max-width: 600px) {
+        .hidden { display: none; }
+        .mobile-head { 
+            position: fixed; 
+            top: 0;
+            left: 0;
+            background: #fff;
+            z-index: 999;
+            box-shadow: 0px 6px 5px 0px rgba(0, 0, 0, 0.1);
+        }
+        header .logo { margin-top: 4px; }
+        #menu ul { display: none; }
+        #menu.menu-opened ul { 
+            display: block; 
+            position: absolute;
+            padding: 0;
+            top: 30%;
+            left: 0;
+            width: 100%;
+            text-align: center;
+        }
+        #menu.menu-opened ul li {
+            clear: both;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 35px;
+        }
+        nav a:hover::after, a.active::after {
+            width: 25%;
+            margin: 1px auto 0;
+        }
+        #menu-toggle { display: block; } 
+        header .info { margin-top: 20px; }
+        header .info img { top: 0; }
+        header a.ghost { 
+            width: 100%;
+            padding: 15px;
+            margin: 20px auto; 
+        }
+    }
 
-@media only screen and (min-width: 601px) and (max-width: 800px) {
-    
-}
+    @media only screen and (min-width: 601px) and (max-width: 1024px) {
+        #menu ul li { margin-right: 40px; }
+        header .info img { bottom: -90px; }
+    }
