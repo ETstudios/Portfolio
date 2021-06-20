@@ -1,35 +1,34 @@
 <?php
-	$projects = [
-		array ("title" => "404 Page Challenge", "description" => "Create a 404 page following supplied design.", "urlDemo" => "https://phasmatechnologies.com/404/", "urlRepo" => "https://github.com/ETstudios/DevChallenges-404", "thumbnailName" => "404.jpg", "thumbnailAlt" => "404 error page UI design" ),
-		array ("title" => "My Team Challenge", "description" => "Create a team info page following supplied design.", "urlDemo" => "https://phasmatechnologies.com/team/", "urlRepo" => "https://github.com/ETstudios/DevChallenges-Team", "thumbnailName" => "team.jpg", "thumbnailAlt" => "Creative Team informational web page" ),
-		array ("title" => "Interior Consultancy Challenge", "description" => "Create an interior consultancy info page following supplied design.", "urlDemo" => "https://phasmatechnologies.com/interior/", "urlRepo" => "https://github.com/ETstudios/DevChallenges-Interior-Consultant", "thumbnailName" => "interior.jpg", "thumbnailAlt" => "Interior Consultancy product landing web page" ),
-		array ("title" => "Recipe Challenge", "description" => "Create a recipe service page following supplied design.", "urlDemo" => "https://phasmatechnologies.com/recipe/", "urlRepo" => "https://github.com/ETstudios/DevChallenges-Recipes", "thumbnailName" => "recipes.jpg", "thumbnailAlt" => "Recipe information web page" ),
-		array ("title" => "My Gallery Challenge", "description" => "Create a recipe service page following supplied design.", "urlDemo" => "https://phasmatechnologies.com/gallery/", "urlRepo" => "https://github.com/ETstudios/DevChallenges-Gallery", "thumbnailName" => "gallery.jpg", "thumbnailAlt" => "Photographer gallery web page design" ),
-		array ("title" => "Checkout Challenge", "description" => "Create a checkout page based on supplied design, with frontend JavaScript and backend PHP validation.", "urlDemo" => "https://phasmatechnologies.com/checkout/", "urlRepo" => "https://github.com/ETstudios/DevChallenges-Checkout", "thumbnailName" => "checkout.jpg", "thumbnailAlt" => "Store checkout web page design" ),
-		array ("title" => "Edie Challenge", "description" => "Create a portfolio page based on supplied design, with frontend JavaScript.", "urlDemo" => "https://phasmatechnologies.com/edie/", "urlRepo" => "https://github.com/ETstudios/DevChallenges-Edie", "thumbnailName" => "edie.jpg", "thumbnailAlt" => "Web design studio landing web page" )
-	];
+	include 'php/classes/database.class.php';
+	include 'php/classes/projects.class.php';
+	include 'php/classes/input.class.php';
 
-	$tags = [
-		"All Projects" => array ("404 Page Challenge", "My Team Challenge", "Interior Consultancy Challenge", "Recipe Challenge", "My Gallery Challenge", "Checkout Challenge", "Edie Challenge"),
-		"JavaScript" => array ("Interior Consultancy Challenge", "Checkout Challenge", "Edie Challenge"),
-		"PHP" => array ("My Team Challenge", "Checkout Challenge")
-	];
+	$db = new Database(2);
+	$conn = $db->Connect();
+	$projects = new Projects($conn);
+	$input = new Input($conn);
+	
+	$tags = $projects->ListTags();
+	$projectsList = $projects->ListProjects();
 
 	$setTag = null;
 	if(isset($_GET['tag'])) {
-		// Sanitize GET['tag']
-		$setTag = str_replace("%20", " ", $_GET['tag']);
+		$tag = $input->Input($_GET['tag']);
+		$setTag = str_replace("%20", " ", $tag);
+
+		if(!$projects->GetTagId($setTag)) {
+			$setTag = "All Projects";
+		}
 	}
 	else {
 		$setTag = "All Projects";
 	}
+	$tagId = $projects->GetTagId($setTag);
+	$projectTags = $projects->ListProjectTags($tagId);
 
 	/* To-Do: 
-		Migrate to database
-			In db, use tagId matched to projectId
-			All projects just calls whole $projects
-			if $setTag is set, use a WHERE clause in query to decide which projects to pull
 		Use an AJAX call with sanitized GET switch() to set which array is used on the fly
+		Set up experiences and education tables and queries inside an "Experience" class
 	*/
 ?>
 <!doctype html>
@@ -102,7 +101,7 @@
 		<div class="row tags">
 			<div class="col-12">
 				<ul>
-					<?php foreach ($tags as $tag => $tagValue) { 
+					<?php foreach ($tags as $tag) { 
 						$selected = null;
 						if ($setTag == $tag) { $selected = "class=\"active\""; }
 					?>
@@ -123,14 +122,14 @@
 		<div class="clear"> &nbsp; </div>
 		<div class="row">
 			<?php
-				// set $projects here, based on $setTag being used above
+				// set $projectsList here, based on $setTag being used above
 
-				foreach ($projects as $project) {
-					if (in_array($project['title'], $tags[$setTag])) {
+				foreach ($projectsList as $project) {
+					if (in_array($project['title'], $projectTags)) {
 			?>
 			<div class="col-6 col-md-4 col-lg-3 project">
 				<figure>
-					<img src="<?php echo "https://phasma-technologies.s3.us-east-2.amazonaws.com/portfolio/thumbnails/" . $project['thumbnailName']; ?>" class="hero" alt="<?php echo $project['thumbnailAlt']; ?>">
+					<img src="<?php echo $project['thumbnailUrl']; ?>" class="hero" alt="<?php echo $project['thumbnailAlt']; ?>">
 					<figcaption>
 						<h3 class="text-center"> <?php echo $project['title']; ?> </h3>
 						<p>
