@@ -27,9 +27,53 @@
 	$projectTags = $projects->ListProjectTags($tagId);
 
 	/* To-Do: 
-		Use an AJAX call with sanitized GET switch() to set which array is used on the fly
 		Set up experiences and education tables and queries inside an "Experience" class
 	*/
+
+	$jobsArray = [
+		array(
+			"company" => "VizVibe LLC", 
+			"jobTitle" => "CTO &amp; Content Creator", 
+			"description" => "As the CTO, I do research and development into new, emerging technologies and techniques in the Augmented Reality and Virtual Reality fields. Beyond just learning more about them, I look at the programming involved to implement them into our process, to keep our projects as up-to-date and forwards-compatible as possible. <br><br> As a content creator, I serve as a generalist. I do any 3D modeling, rigging, animation, and texturing for our content, as needed. While it isn’t the main part of my job, I also aid in UI, UX, and graphic design, including any 2D animation and programming required to make our designs work.", 
+			"startDate" => "May 2017", 
+			"endDate" => "Present"
+		),
+		array(
+			"company" => "Eric Thomas Studios", 
+			"jobTitle" => "3D Generalist", 
+			"description" => "Freelanced as a 3D modeler, rigger, animator, and texture artist.", 
+			"startDate" => "Jun 2013",
+			"endDate" => "Dec 2020"
+		),
+		array(
+			"company" => "Luzerne County Community College", 
+			"jobTitle" => "Student Tutor", 
+			"description" => "Provided tutoring to college students with concentration in the areas of web design, frontend coding, graphic design, and communications.", 
+			"startDate" => "Sep 2015",
+			"endDate" => "May 2016"
+		)
+	];
+
+	$educationArray = [
+		array(
+			"college" => "Luzerne County Community College", 
+			"degreeType" => "Associate's Degree", 
+			"degreeField" => "Computer Graphic Design", 
+			"description" => "An Associate Degree program which entails graphic design, photography, and web design skills.", 
+			"activities" => "Phi Theta Kappa, Sigma Kappa Delta, LCCC Art Club, LCCC Photography Club", 
+			"startDate" => "2012", 
+			"endDate" => "2014"
+		),
+		array(
+			"college" => "Luzerne County Community College", 
+			"degreeType" => "Associate's Degree", 
+			"degreeField" => "Graphic Design / Advertising", 
+			"description" => "An advertising- and branding-oriented Associate Degree program.", 
+			"activities" => "LCCC Photography Club (V.P.)", 
+			"startDate" => "2014", 
+			"endDate" => "2015"
+		)
+	];
 ?>
 <!doctype html>
 <html lang="en">
@@ -168,6 +212,59 @@
 	</section>
 	
 	<div class="clear"> &nbsp; </div>
+
+	<img src="img/experiences.jpg" alt="" class="hero">
+
+	<section id="experiences">
+		<div class="container">
+			<div class="row">
+				
+			</div>
+			
+			<div class="row">
+				<div class="col-12 col-md-6">
+					<div class="col-12 center-text">
+						<h2> Work Experiences </h2>
+					</div>
+					<?php foreach ($jobsArray as $job) { ?>
+						<div class="row">
+							<div class="col-12 experience">
+								<h3> <?php echo "{$job['company']}"; ?> </h3>
+								<strong> <?php echo "{$job['jobTitle']} ({$job['startDate']} - {$job['endDate']})"; ?> </strong>
+								<br><br>
+								<p>
+									<?php echo $job['description']; ?>
+								</p>
+							</div>
+						</div>
+					<?php } ?>
+				</div>
+
+				<div class="col-12 col-md-6">
+					<div class="col-12 center-text">
+						<h2> Education </h2>
+					</div>
+					<?php foreach ($educationArray as $edu) { ?>
+						<div class="row">
+							<div class="col-12 edu">
+								<h3> <?php echo "{$edu['college']}"; ?> </h3>
+								<strong> <?php echo "{$edu['degreeType']} of {$edu['degreeField']}"; ?> </strong>
+								<br><br>
+								<strong> <?php echo "({$edu['startDate']} - {$edu['endDate']})"; ?> </strong>
+								<br><br>
+								<p>
+									<?php echo $edu['description']; ?>
+								</p>
+								<p>
+									Activities: <?php echo $edu['activities']; ?>
+								</p>
+							</div>
+						</div>
+					<?php } ?>
+				</div>
+			</div>
+		</div>
+	</section>
 
    	<script src="js/mobile-nav.js"></script>
    	<script src="js/bootstrap.min.js"></script>

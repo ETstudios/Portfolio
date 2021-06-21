@@ -227,7 +227,31 @@
         height: 100%;
     }
     #projects .project:hover figure figcaption p, #projects .project:focus figure figcaption p, #projects .project.active figure figcaption p { display: block; }
-    
+
+
+/* Experiences */
+    .experience-header {
+        position: relative;
+        margin: 0;
+        width: 100%;
+    }
+    .experience-header figcaption {
+        position: absolute;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        padding: 10%;
+        color: #fff;
+    }
+    #experiences { 
+        padding: 15px;
+        color: var(--lapis-lazuli); 
+    }    
+    #experiences .experience, #experiences .edu {
+        padding: 15px;        
+        margin: 10px;
+    }
 
 
 /* Queries */
