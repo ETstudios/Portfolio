@@ -1,11 +1,13 @@
 <?php
 	include 'php/classes/database.class.php';
 	include 'php/classes/projects.class.php';
+	include 'php/classes/experiences.class.php';
 	include 'php/classes/input.class.php';
 
 	$db = new Database(2);
 	$conn = $db->Connect();
 	$projects = new Projects($conn);
+	$experiences = new Experiences($conn);
 	$input = new Input($conn);
 	
 	$tags = $projects->ListTags();
@@ -26,54 +28,17 @@
 	$tagId = $projects->GetTagId($setTag);
 	$projectTags = $projects->ListProjectTags($tagId);
 
+	$jobs = $experiences->ListJobs();
+	$education = $experiences->ListEducation();
+
 	/* To-Do: 
-		Set up experiences and education tables and queries inside an "Experience" class
+		About
+		Hobbies
+		Footer
+		Mobile
+		iPad
+		WCAG
 	*/
-
-	$jobsArray = [
-		array(
-			"company" => "VizVibe LLC", 
-			"jobTitle" => "CTO &amp; Content Creator", 
-			"description" => "As the CTO, I do research and development into new, emerging technologies and techniques in the Augmented Reality and Virtual Reality fields. Beyond just learning more about them, I look at the programming involved to implement them into our process, to keep our projects as up-to-date and forwards-compatible as possible. <br><br> As a content creator, I serve as a generalist. I do any 3D modeling, rigging, animation, and texturing for our content, as needed. While it isn’t the main part of my job, I also aid in UI, UX, and graphic design, including any 2D animation and programming required to make our designs work.", 
-			"startDate" => "May 2017", 
-			"endDate" => "Present"
-		),
-		array(
-			"company" => "Eric Thomas Studios", 
-			"jobTitle" => "3D Generalist", 
-			"description" => "Freelanced as a 3D modeler, rigger, animator, and texture artist.", 
-			"startDate" => "Jun 2013",
-			"endDate" => "Dec 2020"
-		),
-		array(
-			"company" => "Luzerne County Community College", 
-			"jobTitle" => "Student Tutor", 
-			"description" => "Provided tutoring to college students with concentration in the areas of web design, frontend coding, graphic design, and communications.", 
-			"startDate" => "Sep 2015",
-			"endDate" => "May 2016"
-		)
-	];
-
-	$educationArray = [
-		array(
-			"college" => "Luzerne County Community College", 
-			"degreeType" => "Associate's Degree", 
-			"degreeField" => "Computer Graphic Design", 
-			"description" => "An Associate Degree program which entails graphic design, photography, and web design skills.", 
-			"activities" => "Phi Theta Kappa, Sigma Kappa Delta, LCCC Art Club, LCCC Photography Club", 
-			"startDate" => "2012", 
-			"endDate" => "2014"
-		),
-		array(
-			"college" => "Luzerne County Community College", 
-			"degreeType" => "Associate's Degree", 
-			"degreeField" => "Graphic Design / Advertising", 
-			"description" => "An advertising- and branding-oriented Associate Degree program.", 
-			"activities" => "LCCC Photography Club (V.P.)", 
-			"startDate" => "2014", 
-			"endDate" => "2015"
-		)
-	];
 ?>
 <!doctype html>
 <html lang="en">
@@ -226,7 +191,7 @@
 					<div class="col-12 center-text">
 						<h2> Work Experiences </h2>
 					</div>
-					<?php foreach ($jobsArray as $job) { ?>
+					<?php foreach ($jobs as $job) { ?>
 						<div class="row">
 							<div class="col-12 experience">
 								<h3> <?php echo "{$job['company']}"; ?> </h3>
@@ -244,7 +209,7 @@
 					<div class="col-12 center-text">
 						<h2> Education </h2>
 					</div>
-					<?php foreach ($educationArray as $edu) { ?>
+					<?php foreach ($education as $edu) { ?>
 						<div class="row">
 							<div class="col-12 edu">
 								<h3> <?php echo "{$edu['college']}"; ?> </h3>
