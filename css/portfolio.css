@@ -254,6 +254,18 @@
     }
 
 
+/* About */
+    #about { 
+        background: var(--lapis-lazuli); 
+        padding: 15px;
+    }
+    #about h2 { 
+        text-align: center; 
+        color: #fff; 
+    }
+    #about .about-text { color: #fff; }
+
+
 /* Queries */
     @media only screen and (min-width: 0px) and (max-width: 600px) {
         .hidden { display: none; }

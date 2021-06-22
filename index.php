@@ -82,7 +82,7 @@
 			<div class="row info">
 					<div class="col-12 col-md-1 hidden"> &nbsp; </div>
 					<div class="col-12 col-md-4">
-						<img src="img/placeholder.jpg" class="hero">
+						<img src="img/placeholder.jpg" alt="" class="hero">
 					</div>
 					<div class="col-12 col-md-1 hidden"> &nbsp; </div>
 					<div class="col-12 col-md-4 bio">
@@ -90,7 +90,7 @@
 							Hey, I'm Eric Thomas!
 						</h2>
 						<p>
-							I’m a full-stack developer and designer based in Pennsylvania.
+							I'm a full-stack developer and designer based in Pennsylvania.
 						</p>
 						<a href="#projects" class="ghost"> My Projects </a>
 					</div>
@@ -181,13 +181,9 @@
 	<img src="img/experiences.jpg" alt="" class="hero">
 
 	<section id="experiences">
-		<div class="container">
+		<div class="container">			
 			<div class="row">
-				
-			</div>
-			
-			<div class="row">
-				<div class="col-12 col-md-6">
+				<div class="col-12 col-md-5">
 					<div class="col-12 center-text">
 						<h2> Work Experiences </h2>
 					</div>
@@ -205,7 +201,8 @@
 					<?php } ?>
 				</div>
 
-				<div class="col-12 col-md-6">
+				<div class="col-12 col-md-2 hidden"> &nbsp; </div>
+				<div class="col-12 col-md-5">
 					<div class="col-12 center-text">
 						<h2> Education </h2>
 					</div>
@@ -227,6 +224,47 @@
 						</div>
 					<?php } ?>
 				</div>
+			</div>
+		</div>
+	</section>
+
+	<div class="clear"> &nbsp; </div>
+
+	<section id="about">
+		<div class="container">
+			<div class="clear"> &nbsp; </div>
+			<div class="row">
+				<div class="col-12">
+					<h2> About Me </h2>
+				</div>
+			</div>
+			<div class="clear"> &nbsp; </div>
+			<div class="row">
+				<div class="col-12 col-md-1 hidden"> &nbsp; </div>
+				<div class="col-12 col-md-3">
+					<img src="img/placeholder.jpg" alt="" class="hero">
+					<br><br>
+				</div>
+				<div class="col-12 col-md-1 hidden"> &nbsp; </div>
+				<div class="col-12 col-md-5">
+					<p class="about-text">
+						I started coding in 2009, picked up Photoshop in 2011, and have been doing art and programming ever since. I'm a web designer, 3D modeler, and full stack web and game developer. Always striving to learn new skills, I've become a creative jack of all trades over the years.
+					</p>
+					<br><br>
+					<div class="row">
+						<div class="col-4 col-md-2">
+							<a href="https://github.com/ETstudios" target="_blank">
+								<img src="img/github.png" alt="Github logo" class="hero">
+							</a>
+						</div>
+						<div class="col-4 col-md-2">
+							<a href="https://twitter.com/ET_Studios" target="_blank">
+								<img src="img/twitter.png" alt="Twitter logo" class="hero">
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-md-2 hidden"> &nbsp; </div>
 			</div>
 		</div>
 	</section>
