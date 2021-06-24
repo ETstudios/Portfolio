@@ -32,7 +32,6 @@
 	$education = $experiences->ListEducation();
 
 	/* To-Do: 
-		Hobbies
 		Footer
 		Mobile
 		iPad
@@ -131,8 +130,6 @@
 		<div class="clear"> &nbsp; </div>
 		<div class="row">
 			<?php
-				// set $projectsList here, based on $setTag being used above
-
 				foreach ($projectsList as $project) {
 					if (in_array($project['title'], $projectTags)) {
 			?>
@@ -336,6 +333,40 @@
 							<div class="col-3 skill">
 								<img src="img/adobe.png" alt="Adobe icon" class="hero adobe">
 								<h5> Adobe Suite </h5>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="clear"> &nbsp; </div>
+
+			<div class="row">
+				<div class="col-12">
+					<div class="container hobbies">
+						<h4> My Hobbies </h4>
+						<br>
+						<div class="row">
+							<div class="col-12 col-md-4 hobby">
+								<img src="img/modeling.jpg" alt="3D character texture maps showcase" class="hero">
+								<h5> 3D Modeling </h5>
+								<p>
+									5 years ago, I felt like trying out Blender, and I haven't stopped using it since. Over the years, I've tried modeling a lot of different subjects, though bar-none I seem to most enjoy, and do well at, prop modeling. Doing all the other steps in the process also me keep up my various art and animation skills.
+								</p>
+							</div>
+							<div class="col-12 col-md-4 hobby">
+								<img src="img/reading.jpg" alt="A filled up bookshelf" class="hero">
+								<h5> Reading </h5>
+								<p>
+									Whether it's been for entertainment, escapism, or education, I've been an avid reader my entire life. Outside of technical and creative pursuits, it's the main way I spend my downtime. I'm willing to sink time into most kinds of reading, but urban fantasy and the mythology it tends to use has always been my main genre.
+								</p>
+							</div>
+							<div class="col-12 col-md-4 hobby">
+								<img src="img/gamedev.jpg" alt="Hands typing on a laptop" class="hero">
+								<h5> Game Development </h5>
+								<p>
+									While there's some overlap with work, I also work on various game development experiments for fun. While they don't tend to see the light of day, they're a great way for me to work out various ideas I have and to continue learning new things. It also involves watching gameplay videos, which is both educational and relaxing.
+								</p>
 							</div>
 						</div>
 					</div>

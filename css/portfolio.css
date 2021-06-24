@@ -278,6 +278,20 @@
     #about .skills .skill .hero { width: 62%; }
     .blender { margin-bottom: 26px; }
     .adobe { margin-bottom: 9px; }
+    #about .hobbies { 
+        background-color: var(--white); 
+        padding: 15px;
+    }
+    #about .hobbies h4, #about .hobbies h5 { 
+        text-align: center; 
+        color: var(--lapis-lazuli);
+    }
+    #about .hobbies .hobby {
+        padding: 15px;        
+    }
+    #about .hobbies .hobby img {
+        margin-bottom: 15px;        
+    }
 
 
 /* Queries */
