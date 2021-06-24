@@ -293,6 +293,14 @@
         margin-bottom: 15px;        
     }
 
+/* Footer */
+    footer { 
+        padding: 20px; 
+        color: var(--black);
+    }
+    footer a, footer a:active, footer a:visited { color: var(--lapis-lazuli); }
+    footer a:hover, footer a:focus { color: var(--blue-jeans); }
+
 
 /* Queries */
     @media only screen and (min-width: 0px) and (max-width: 600px) {

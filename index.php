@@ -32,9 +32,11 @@
 	$education = $experiences->ListEducation();
 
 	/* To-Do: 
-		Footer
-		Mobile
-		iPad
+		Header profil photo
+		Experiences header image
+		About profile photo
+		Mobile queries
+		iPad queries
 		WCAG
 	*/
 ?>
@@ -365,15 +367,25 @@
 								<img src="img/gamedev.jpg" alt="Hands typing on a laptop" class="hero">
 								<h5> Game Development </h5>
 								<p>
-									While there's some overlap with work, I also work on various game development experiments for fun. While they don't tend to see the light of day, they're a great way for me to work out various ideas I have and to continue learning new things. It also involves watching gameplay videos, which is both educational and relaxing.
+									While there's some overlap with work, I also do various game development experiments for fun. While they don't tend to see the light of day, they're a great way for me to work out various ideas I have and to continue learning new things. It also involves watching gameplay videos, which is both educational and relaxing.
 								</p>
 							</div>
 						</div>
 					</div>
+
+					<div class="clear"> &nbsp; </div>
 				</div>
 			</div>
 		</div>
 	</section>
+
+	<footer class="container">
+		<div class="row">
+				<div class="col-sm-12 center-text">
+					Created by <a href="https://github.com/ETstudios" target="_blank">Eric Thomas</a> - <a href="https://devchallenges.io/" target="_blank">devChallenges.io</a>
+				</div>
+			</div>
+	</footer>
    	<script src="js/mobile-nav.js"></script>
    	<script src="js/bootstrap.min.js"></script>
 </body>
