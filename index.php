@@ -32,7 +32,6 @@
 	$education = $experiences->ListEducation();
 
 	/* To-Do: 
-		About
 		Hobbies
 		Footer
 		Mobile
@@ -51,6 +50,7 @@
 	<link rel="shortcut icon" href="img/icon.png">    
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/portfolio.css">
+	<link rel="stylesheet" href="fonts/all.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" type="text/css" rel="stylesheet">
 </head>
 <body>
@@ -238,7 +238,9 @@
 					<h2> About Me </h2>
 				</div>
 			</div>
+
 			<div class="clear"> &nbsp; </div>
+
 			<div class="row">
 				<div class="col-12 col-md-1 hidden"> &nbsp; </div>
 				<div class="col-12 col-md-3">
@@ -251,24 +253,96 @@
 						I started coding in 2009, picked up Photoshop in 2011, and have been doing art and programming ever since. I'm a web designer, 3D modeler, and full stack web and game developer. Always striving to learn new skills, I've become a creative jack of all trades over the years.
 					</p>
 					<br><br>
-					<div class="row">
+					<div class="row socials">
 						<div class="col-4 col-md-2">
 							<a href="https://github.com/ETstudios" target="_blank">
-								<img src="img/github.png" alt="Github logo" class="hero">
+								<i class="fab fa-github-alt fa-5x"></i>
 							</a>
 						</div>
 						<div class="col-4 col-md-2">
 							<a href="https://twitter.com/ET_Studios" target="_blank">
-								<img src="img/twitter.png" alt="Twitter logo" class="hero">
+								<i class="fab fa-twitter fa-5x"></i>
 							</a>
 						</div>
 					</div>
 				</div>
 				<div class="col-12 col-md-2 hidden"> &nbsp; </div>
 			</div>
+
+			<div class="clear"> &nbsp; </div>
+
+			<div class="row">
+				<div class="col-12 col-md-6">
+					<div class="container skills">
+						<h4> Skills </h4>
+						<br>
+						<div class="row">
+							<div class="col-3 skill">
+								<i class="fab fa-html5 fa-5x"></i>
+								<h5> HTML5 </h5>
+							</div>
+							<div class="col-3 skill">
+								<i class="fab fa-css3-alt fa-5x"></i>
+								<h5> CSS3 </h5>
+							</div>
+							<div class="col-3 skill">
+								<i class="fab fa-js fa-5x"></i>
+								<h5> JavaScript </h5>
+							</div>
+							<div class="col-3 skill">
+								<img src="img/c-sharp.png" alt="C# programming language icon" class="hero">
+								<h5> Mono </h5>
+							</div>
+							<div class="col-3 skill">
+								<i class="fab fa-unity fa-5x"></i>
+								<h5> Unity Engine </h5>
+							</div>
+							<div class="col-3 skill">
+								<i class="fas fa-database fa-5x"></i>
+								<h5> MySQL </h5>
+							</div>
+							<div class="col-3 skill">
+								<i class="fab fa-php fa-5x"></i>
+								<h5> PHP </h5>
+							</div>
+							<div class="col-3 skill">
+								<i class="fab fa-docker fa-5x"></i>
+								<h5> Docker </h5>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-md-6">
+					<div class="container skills">
+						<h4> Artistic </h4>
+						<br>
+						<div class="row">
+							<div class="col-3 skill">
+								<img src="img/blender.png" alt="Blender icon" class="hero blender">
+								<h5> Blender </h5>
+							</div>
+							<div class="col-3 skill">
+								<i class="fas fa-cube fa-5x"></i>
+								<h5> 3D Modeling </h5>
+							</div>
+							<div class="col-3 skill">
+								<i class="fas fa-paint-brush fa-5x"></i>
+								<h5> Texturing </h5>
+							</div>
+							<div class="col-3 skill">
+								<i class="fas fa-play fa-5x"></i>
+								<h5> 3D Animation </h5>
+							</div>
+							<div class="col-3 skill">
+								<img src="img/adobe.png" alt="Adobe icon" class="hero adobe">
+								<h5> Adobe Suite </h5>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</section>
-
    	<script src="js/mobile-nav.js"></script>
    	<script src="js/bootstrap.min.js"></script>
 </body>
