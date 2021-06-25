@@ -32,12 +32,13 @@
 	$education = $experiences->ListEducation();
 
 	/* To-Do: 
-		Header profil photo
+		Header profile photo
 		Experiences header image
 		About profile photo
 		Mobile queries
 		iPad queries
 		WCAG
+		Projects section AJAX?
 	*/
 ?>
 <!doctype html>
@@ -55,11 +56,17 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" type="text/css" rel="stylesheet">
 </head>
 <body>
-	<a href="#projects" class="skip"> Skip to content </a>
+	<a href="#projects" class="skip" id="skip"> Skip to content </a>
+	<span id="to-top">
+		<i class="fas fa-sort-up"></i>
+		<p>
+			Top
+		</p>
+	</span>
 
 	<header id="header">
 		<div class="container">
-			<nav class="row">
+			<nav class="row" id="nav">
 				<div class="col-9 col-md-4 col-lg-3">
 					<h2 class="logo"> Eric Thomas </h2>
 				</div>
@@ -82,11 +89,11 @@
 			</nav>
 			<div class="row info">
 					<div class="col-12 col-md-1 hidden"> &nbsp; </div>
-					<div class="col-12 col-md-4">
+					<div class="col-12 col-md-4 col-lg-4">
 						<img src="img/placeholder.jpg" alt="" class="hero">
 					</div>
 					<div class="col-12 col-md-1 hidden"> &nbsp; </div>
-					<div class="col-12 col-md-4 bio">
+					<div class="col-12 col-md-6 col-lg-4 bio">
 						<h2> 
 							Hey, I'm Eric Thomas!
 						</h2>
@@ -135,7 +142,7 @@
 				foreach ($projectsList as $project) {
 					if (in_array($project['title'], $projectTags)) {
 			?>
-			<div class="col-6 col-md-4 col-lg-3 project">
+			<div class="col-12 col-md-6 col-lg-3 project">
 				<figure>
 					<img src="<?php echo $project['thumbnailUrl']; ?>" class="hero" alt="<?php echo $project['thumbnailAlt']; ?>">
 					<figcaption>
@@ -174,15 +181,17 @@
 			?>
 		</div>
 	</section>
-	
+
 	<div class="clear"> &nbsp; </div>
 
 	<img src="img/experiences.jpg" alt="" class="hero">
 
+	<div class="clear"> &nbsp; </div>
+
 	<section id="experiences">
 		<div class="container">			
 			<div class="row">
-				<div class="col-12 col-md-5">
+				<div class="col-12 col-md-6 col-lg-5">
 					<div class="col-12 center-text">
 						<h2> Work Experiences </h2>
 					</div>
@@ -200,8 +209,8 @@
 					<?php } ?>
 				</div>
 
-				<div class="col-12 col-md-2 hidden"> &nbsp; </div>
-				<div class="col-12 col-md-5">
+				<div class="col-12 col-lg-2 hidden"> &nbsp; </div>
+				<div class="col-12 col-md-6 col-lg-5">
 					<div class="col-12 center-text">
 						<h2> Education </h2>
 					</div>
@@ -241,13 +250,13 @@
 			<div class="clear"> &nbsp; </div>
 
 			<div class="row">
-				<div class="col-12 col-md-1 hidden"> &nbsp; </div>
-				<div class="col-12 col-md-3">
+				<div class="col-12 col-lg-1 hidden"> &nbsp; </div>
+				<div class="col-12 col-md-4 col-lg-3">
 					<img src="img/placeholder.jpg" alt="" class="hero">
 					<br><br>
 				</div>
-				<div class="col-12 col-md-1 hidden"> &nbsp; </div>
-				<div class="col-12 col-md-5">
+				<div class="col-12 col-md-2 col-lg-1 hidden"> &nbsp; </div>
+				<div class="col-12 col-md-6 col-lg-5">
 					<p class="about-text">
 						I started coding in 2009, picked up Photoshop in 2011, and have been doing art and programming ever since. I'm a web designer, 3D modeler, and full stack web and game developer. Always striving to learn new skills, I've become a creative jack of all trades over the years.
 					</p>
@@ -273,38 +282,38 @@
 			<div class="row">
 				<div class="col-12 col-md-6">
 					<div class="container skills">
-						<h4> Skills </h4>
+						<h4> Development </h4>
 						<br>
 						<div class="row">
-							<div class="col-3 skill">
+							<div class="col-6 col-md-6 col-lg-3 skill">
 								<i class="fab fa-html5 fa-5x"></i>
 								<h5> HTML5 </h5>
 							</div>
-							<div class="col-3 skill">
+							<div class="col-6 col-md-6 col-lg-3 skill">
 								<i class="fab fa-css3-alt fa-5x"></i>
 								<h5> CSS3 </h5>
 							</div>
-							<div class="col-3 skill">
+							<div class="col-6 col-md-6 col-lg-3 skill">
 								<i class="fab fa-js fa-5x"></i>
 								<h5> JavaScript </h5>
 							</div>
-							<div class="col-3 skill">
+							<div class="col-6 col-md-6 col-lg-3 skill">
 								<img src="img/c-sharp.png" alt="C# programming language icon" class="hero">
-								<h5> Mono </h5>
+								<h5> Mono C# </h5>
 							</div>
-							<div class="col-3 skill">
+							<div class="col-6 col-md-6 col-lg-3 skill">
 								<i class="fab fa-unity fa-5x"></i>
 								<h5> Unity Engine </h5>
 							</div>
-							<div class="col-3 skill">
+							<div class="col-6 col-md-6 col-lg-3 skill">
 								<i class="fas fa-database fa-5x"></i>
 								<h5> MySQL </h5>
 							</div>
-							<div class="col-3 skill">
+							<div class="col-6 col-md-6 col-lg-3 skill">
 								<i class="fab fa-php fa-5x"></i>
 								<h5> PHP </h5>
 							</div>
-							<div class="col-3 skill">
+							<div class="col-6 col-md-6 col-lg-3 skill">
 								<i class="fab fa-docker fa-5x"></i>
 								<h5> Docker </h5>
 							</div>
@@ -313,26 +322,26 @@
 				</div>
 				<div class="col-12 col-md-6">
 					<div class="container skills">
-						<h4> Artistic </h4>
+						<h4> Art &amp; Design </h4>
 						<br>
 						<div class="row">
-							<div class="col-3 skill">
+							<div class="col-6 col-md-6 col-lg-3 skill">
 								<img src="img/blender.png" alt="Blender icon" class="hero blender">
 								<h5> Blender </h5>
 							</div>
-							<div class="col-3 skill">
+							<div class="col-6 col-md-6 col-lg-3 skill">
 								<i class="fas fa-cube fa-5x"></i>
 								<h5> 3D Modeling </h5>
 							</div>
-							<div class="col-3 skill">
+							<div class="col-6 col-md-6 col-lg-3 skill">
 								<i class="fas fa-paint-brush fa-5x"></i>
 								<h5> Texturing </h5>
 							</div>
-							<div class="col-3 skill">
+							<div class="col-6 col-md-6 col-lg-3 skill">
 								<i class="fas fa-play fa-5x"></i>
 								<h5> 3D Animation </h5>
 							</div>
-							<div class="col-3 skill">
+							<div class="col-6 col-md-6 col-lg-3 skill">
 								<img src="img/adobe.png" alt="Adobe icon" class="hero adobe">
 								<h5> Adobe Suite </h5>
 							</div>
@@ -349,21 +358,21 @@
 						<h4> My Hobbies </h4>
 						<br>
 						<div class="row">
-							<div class="col-12 col-md-4 hobby">
+							<div class="col-12 col-md-6 col-lg-4 hobby">
 								<img src="img/modeling.jpg" alt="3D character texture maps showcase" class="hero">
 								<h5> 3D Modeling </h5>
 								<p>
 									5 years ago, I felt like trying out Blender, and I haven't stopped using it since. Over the years, I've tried modeling a lot of different subjects, though bar-none I seem to most enjoy, and do well at, prop modeling. Doing all the other steps in the process also me keep up my various art and animation skills.
 								</p>
 							</div>
-							<div class="col-12 col-md-4 hobby">
+							<div class="col-12 col-md-6 col-lg-4 hobby">
 								<img src="img/reading.jpg" alt="A filled up bookshelf" class="hero">
 								<h5> Reading </h5>
 								<p>
 									Whether it's been for entertainment, escapism, or education, I've been an avid reader my entire life. Outside of technical and creative pursuits, it's the main way I spend my downtime. I'm willing to sink time into most kinds of reading, but urban fantasy and the mythology it tends to use has always been my main genre.
 								</p>
 							</div>
-							<div class="col-12 col-md-4 hobby">
+							<div class="col-12 col-md-6 col-lg-4 hobby">
 								<img src="img/gamedev.jpg" alt="Hands typing on a laptop" class="hero">
 								<h5> Game Development </h5>
 								<p>
@@ -386,6 +395,7 @@
 				</div>
 			</div>
 	</footer>
+
    	<script src="js/mobile-nav.js"></script>
    	<script src="js/bootstrap.min.js"></script>
 </body>

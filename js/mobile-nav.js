@@ -18,12 +18,16 @@ function MenuToggle() {
 // Navbar
 window.onscroll = function () {MobileHeader()};
 const header = document.getElementById("header");
+const nav = document.getElementById("nav");
+const totop = document.getElementById("to-top");
 let sticky = header.offsetTop;
 
 function MobileHeader() {
     if (window.pageYOffset > sticky) {
-        header.classList.add("mobile-head");
+        nav.classList.add("mobile-head");
+        totop.classList.add("to-top");
     } else {
-        header.classList.remove("mobile-head");
+        nav.classList.remove("mobile-head");
+        totop.classList.remove("to-top");
     }
 }
