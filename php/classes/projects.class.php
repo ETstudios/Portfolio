@@ -35,7 +35,7 @@ class Projects {
     }
 
     public function ListProjects() {
-        $sql = "SELECT title, description, urlDemo, urlRepo, thumbnailName, thumbnailAlt FROM portfolio.Projects;";
+        $sql = "SELECT title, description, urlDemo, urlRepo, thumbnailName, thumbnailAlt FROM portfolio.Projects ORDER BY ID DESC";
         $result = false;
 
         if ($stmt = $this->conn->prepare($sql)) {

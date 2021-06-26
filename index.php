@@ -35,8 +35,6 @@
 		Header profile photo
 		Experiences header image
 		About profile photo
-		iPad queries
-		WCAG
 		Projects section AJAX?
 	*/
 ?>
@@ -48,10 +46,10 @@
 	<meta name="author" content="Eric Thomas">
 	<meta name="description" content="Eric Thomas developer portfolio">
 	<title> My Portfolio </title>
-	<link rel="shortcut icon" href="img/icon.png">    
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/portfolio.css">
-	<link rel="stylesheet" href="fonts/all.css">
+	<link href="img/icon.png" rel="shortcut icon">    
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="css/portfolio.css" rel="stylesheet" type="text/css">
+	<link href="fonts/all.css" rel="stylesheet" type="text/css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" type="text/css" rel="stylesheet">
 </head>
 <body>
