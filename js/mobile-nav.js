@@ -1,16 +1,30 @@
 let menuOpened = false;
+const menuToggle = document.getElementById("menu-toggle");
+const menu = document.getElementById("menu");
+const menuLinks = menu.getElementsByTagName("a");
 
 function MenuToggle() {
     menuOpened = !menuOpened;
-    const menuToggle = document.getElementById("menu-toggle");
-    const menu = document.getElementById("menu");
-    
     if (menuOpened) {
-        menuToggle.innerHTML = "close";
-        menu.classList.add("menu-opened");
+        MenuOpen();
     } else {
-        menuToggle.innerHTML = "menu";
-        menu.classList.remove("menu-opened");
+        MenuClose();
+    }
+}
+
+function MenuOpen() {
+    menuToggle.innerHTML = "close";
+    menu.classList.add("menu-opened");
+    for (let i = 0; i < menuLinks.length; i++) {
+        menuLinks[i].addEventListener("click", function() { MenuClose(); menuOpened = false; });
+    }
+}
+
+function MenuClose() {
+    menuToggle.innerHTML = "menu";
+    menu.classList.remove("menu-opened");
+    for (let i = 0; i < menuLinks.length; i++) {
+        menuLinks[i].removeEventListener("click", function() { MenuClose(); menuOpened = false; });
     }
 }
 

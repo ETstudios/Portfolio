@@ -397,6 +397,5 @@
 	</footer>
 
    	<script src="js/mobile-nav.js"></script>
-   	<script src="js/bootstrap.min.js"></script>
 </body>
 </html>
