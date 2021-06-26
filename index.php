@@ -11,23 +11,6 @@
 	$input = new Input($conn);
 	
 	$tags = $projects->ListTags();
-	$projectsList = $projects->ListProjects();
-
-	$setTag = null;
-	if(isset($_GET['tag'])) {
-		$tag = $input->Input($_GET['tag']);
-		$setTag = str_replace("%20", " ", $tag);
-
-		if(!$projects->GetTagId($setTag)) {
-			$setTag = "All Projects";
-		}
-	}
-	else {
-		$setTag = "All Projects";
-	}
-	$tagId = $projects->GetTagId($setTag);
-	$projectTags = $projects->ListProjectTags($tagId);
-
 	$jobs = $experiences->ListJobs();
 	$education = $experiences->ListEducation();
 
@@ -35,7 +18,6 @@
 		Header profile photo
 		Experiences header image
 		About profile photo
-		Projects section AJAX?
 	*/
 ?>
 <!doctype html>
@@ -52,7 +34,7 @@
 	<link href="fonts/all.css" rel="stylesheet" type="text/css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" type="text/css" rel="stylesheet">
 </head>
-<body>
+<body onload="SwitchProjects('All Projects')">
 	<a href="#projects" class="skip" id="skip"> Skip to content </a>
 	<span id="to-top">
 		<i class="fas fa-sort-up"></i>
@@ -111,18 +93,13 @@
 			<div class="col-12">
 				<h2> My Projects </h2>
 			</div>
-		</div>
+		</div>		
 		<div class="row tags">
 			<div class="col-12">
 				<ul>
-					<?php foreach ($tags as $tag) { 
-						$selected = null;
-						if ($setTag == $tag) { $selected = "class=\"active\""; }
-					?>
+					<?php foreach ($tags as $tag) { ?>
 						<li>
-							<a href="index.php?tag=<?php echo $tag; ?>#projects" <?php echo $selected; ?>>
-								<?php echo $tag; ?>
-							</a>
+							<button onclick="SwitchProjects('<?php echo $tag; ?>')" class="tag-button"><?php echo $tag; ?></button>
 						</li>							
 					<?php } ?>
 				</ul>
@@ -135,47 +112,7 @@
 		</div>
 		<div class="clear"> &nbsp; </div>
 		<div class="row">
-			<?php
-				foreach ($projectsList as $project) {
-					if (in_array($project['title'], $projectTags)) {
-			?>
-			<div class="col-12 col-md-6 col-lg-3 project">
-				<figure>
-					<img src="<?php echo $project['thumbnailUrl']; ?>" class="hero" alt="<?php echo $project['thumbnailAlt']; ?>">
-					<figcaption>
-						<h3 class="text-center"> <?php echo $project['title']; ?> </h3>
-						<p>
-							<?php echo $project['description']; ?>
-						</p>
-						<div class="container links">
-							<div class="row">
-								<?php 
-								if ($project['urlDemo'] == null || $project['urlRepo'] == null) {
-									if ($project['urlDemo'] == null) { ?>
-										<div class="col-12">
-											<a href="<?php echo $project['urlRepo']; ?>"> Repo </a>
-										</div>
-									<?php } else { ?>
-										<div class="col-12">
-											<a href="<?php echo $project['urlDemo']; ?>"> Demo </a>
-										</div>
-									<?php }
-								} else { ?>
-									<div class="col-6">
-										<a href="<?php echo $project['urlDemo']; ?>"> Demo </a>
-									</div>
-									<div class="col-6">
-										<a href="<?php echo $project['urlRepo']; ?>"> Repo </a>
-									</div>
-								<?php } ?>
-							</div>
-						</div>
-					</figcaption>
-				</figure>
-			</div>
-			<?php } 
-				}
-			?>
+			<div class="row tags" id="projects-list"></div>
 		</div>
 	</section>
 
@@ -394,5 +331,6 @@
 	</footer>
 
    	<script src="js/mobile-nav.js"></script>
+   	<script src="js/portfolio.js"></script>
 </body>
 </html>

@@ -170,18 +170,19 @@
         display: inline-block;
         margin-right: 10%;
     }
-    #projects .tags ul li a {
+    #projects .tags ul li a, #projects .tags ul li button {
         background-color: transparent;
         border: 0;
         font-family: 'Mukta', sans-serif;
         font-size: 1.2em;
         color: var(--lapis-lazuli);
     }
-    #projects .tags ul li a:hover {
+    #projects .tags ul li a:hover, #projects .tags ul li button:hover {
         color: var(--blue-jeans);
         font-weight: 600;
     }
-    #projects .tags ul li a:hover::after, #projects .tags ul li a:focus::after, #projects .tags ul li a.active::after {
+    #projects .tags ul li a:hover::after, #projects .tags ul li a:focus::after, #projects .tags ul li a.active::after,
+    #projects .tags ul li button:hover::after, #projects .tags ul li button:focus::after, #projects .tags ul li button.active::after {
         content: " ";
         display: block;
         width: 100%;
