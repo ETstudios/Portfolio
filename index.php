@@ -16,7 +16,6 @@
 
 	/* To-Do: 
 		Header profile photo
-		Experiences header image
 		About profile photo
 	*/
 ?>
@@ -36,12 +35,12 @@
 </head>
 <body onload="SwitchProjects('All Projects')">
 	<a href="#projects" class="skip" id="skip"> Skip to content </a>
-	<span id="to-top">
+	<a href="#skip" id="to-top">
 		<i class="fas fa-sort-up"></i>
 		<p>
 			Top
 		</p>
-	</span>
+	</a>
 
 	<header id="header">
 		<div class="container">
@@ -118,59 +117,7 @@
 
 	<div class="clear"> &nbsp; </div>
 
-	<img src="img/experiences.jpg" alt="" class="hero">
 
-	<div class="clear"> &nbsp; </div>
-
-	<section id="experiences">
-		<div class="container">			
-			<div class="row">
-				<div class="col-12 col-md-6 col-lg-5">
-					<div class="col-12 center-text">
-						<h2> Work Experiences </h2>
-					</div>
-					<?php foreach ($jobs as $job) { ?>
-						<div class="row">
-							<div class="col-12 experience">
-								<h3> <?php echo "{$job['company']}"; ?> </h3>
-								<strong> <?php echo "{$job['jobTitle']} ({$job['startDate']} - {$job['endDate']})"; ?> </strong>
-								<br><br>
-								<p>
-									<?php echo $job['description']; ?>
-								</p>
-							</div>
-						</div>
-					<?php } ?>
-				</div>
-
-				<div class="col-12 col-lg-2 hidden"> &nbsp; </div>
-				<div class="col-12 col-md-6 col-lg-5">
-					<div class="col-12 center-text">
-						<h2> Education </h2>
-					</div>
-					<?php foreach ($education as $edu) { ?>
-						<div class="row">
-							<div class="col-12 edu">
-								<h3> <?php echo "{$edu['college']}"; ?> </h3>
-								<strong> <?php echo "{$edu['degreeType']} of {$edu['degreeField']}"; ?> </strong>
-								<br><br>
-								<strong> <?php echo "({$edu['startDate']} - {$edu['endDate']})"; ?> </strong>
-								<br><br>
-								<p>
-									<?php echo $edu['description']; ?>
-								</p>
-								<p>
-									Activities: <?php echo $edu['activities']; ?>
-								</p>
-							</div>
-						</div>
-					<?php } ?>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<div class="clear"> &nbsp; </div>
 
 	<section id="about">
 		<div class="container">
@@ -321,6 +268,58 @@
 			</div>
 		</div>
 	</section>
+
+		<div class="clear"> &nbsp; </div>
+
+	<section id="experiences">
+		<div class="container">			
+			<div class="row">
+				<div class="col-12 col-md-6 col-lg-5">
+					<div class="col-12 center-text">
+						<h2> Work Experiences </h2>
+					</div>
+					<?php foreach ($jobs as $job) { ?>
+						<div class="row">
+							<div class="col-12 experience">
+								<h3> <?php echo "{$job['company']}"; ?> </h3>
+								<strong> <?php echo "{$job['jobTitle']} ({$job['startDate']} - {$job['endDate']})"; ?> </strong>
+								<br><br>
+								<p>
+									<?php echo $job['description']; ?>
+								</p>
+							</div>
+						</div>
+					<?php } ?>
+				</div>
+
+				<div class="col-12 col-lg-2 hidden"> &nbsp; </div>
+				<div class="col-12 col-md-6 col-lg-5">
+					<div class="col-12 center-text">
+						<h2> Education </h2>
+					</div>
+					<?php foreach ($education as $edu) { ?>
+						<div class="row">
+							<div class="col-12 edu">
+								<h3> <?php echo "{$edu['college']}"; ?> </h3>
+								<strong> <?php echo "{$edu['degreeType']} of {$edu['degreeField']}"; ?> </strong>
+								<br><br>
+								<strong> <?php echo "({$edu['startDate']} - {$edu['endDate']})"; ?> </strong>
+								<br><br>
+								<p>
+									<?php echo $edu['description']; ?>
+								</p>
+								<p>
+									Activities: <?php echo $edu['activities']; ?>
+								</p>
+							</div>
+						</div>
+					<?php } ?>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<div class="clear"> &nbsp; </div>
 
 	<footer class="container">
 		<div class="row">
