@@ -361,7 +361,7 @@
 								<img src="img/modeling.jpg" alt="3D character texture maps showcase" class="hero">
 								<h5> 3D Modeling </h5>
 								<p>
-									5 years ago, I felt like trying out Blender, and I haven't stopped using it since. Over the years, I've tried modeling a lot of different subjects, though bar-none I seem to most enjoy, and do well at, prop modeling. Doing all the other steps in the process also me keep up my various art and animation skills.
+									5 years ago, I felt like trying out Blender, and I haven't stopped using it since. Over the years, I've tried modeling a lot of different subjects, though bar-none I seem to most enjoy, and do well at, prop modeling. Doing all the other steps in the process also helps me keep up my various art and animation skills.
 								</p>
 							</div>
 							<div class="col-12 col-md-6 col-lg-4 hobby">
@@ -375,7 +375,7 @@
 								<img src="img/gamedev.jpg" alt="Hands typing on a laptop" class="hero">
 								<h5> Game Development </h5>
 								<p>
-									While there's some overlap with work, I also do various game development experiments for fun. While they don't tend to see the light of day, they're a great way for me to work out various ideas I have and to continue learning new things. It also involves watching gameplay videos, which is both educational and relaxing.
+									While there's some overlap with work, I also do various game development experiments for fun. They don't tend to see the light of day, but they're a great way for me to work out various ideas I have and to continue learning new things. It also involves watching gameplay videos, which is both educational and relaxing.
 								</p>
 							</div>
 						</div>
