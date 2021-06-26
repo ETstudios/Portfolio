@@ -35,7 +35,6 @@
 		Header profile photo
 		Experiences header image
 		About profile photo
-		Mobile queries
 		iPad queries
 		WCAG
 		Projects section AJAX?
@@ -249,7 +248,7 @@
 
 			<div class="clear"> &nbsp; </div>
 
-			<div class="row">
+			<div class="row about">
 				<div class="col-12 col-lg-1 hidden"> &nbsp; </div>
 				<div class="col-12 col-md-4 col-lg-3">
 					<img src="img/placeholder.jpg" alt="" class="hero">
@@ -260,7 +259,7 @@
 					<p class="about-text">
 						I started coding in 2009, picked up Photoshop in 2011, and have been doing art and programming ever since. I'm a web designer, 3D modeler, and full stack web and game developer. Always striving to learn new skills, I've become a creative jack of all trades over the years.
 					</p>
-					<br><br>
+					<br>
 					<div class="row socials">
 						<div class="col-4 col-md-2">
 							<a href="https://github.com/ETstudios" target="_blank">
