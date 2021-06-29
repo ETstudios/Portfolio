@@ -68,7 +68,7 @@
 			<div class="row info">
 					<div class="col-12 col-md-1 hidden"> &nbsp; </div>
 					<div class="col-12 col-md-4 col-lg-4">
-						<img src="img/placeholder.jpg" alt="" class="hero">
+						<img src="img/headshot.jpg" alt="Self-portrait photo" class="hero">
 					</div>
 					<div class="col-12 col-md-1 hidden"> &nbsp; </div>
 					<div class="col-12 col-md-6 col-lg-4 bio">
@@ -133,7 +133,7 @@
 			<div class="row about">
 				<div class="col-12 col-lg-1 hidden"> &nbsp; </div>
 				<div class="col-12 col-md-4 col-lg-3">
-					<img src="img/placeholder.jpg" alt="" class="hero">
+					<img src="img/profile.jpg" alt="Self-portrait photo" class="hero">
 					<br><br>
 				</div>
 				<div class="col-12 col-md-2 col-lg-1 hidden"> &nbsp; </div>
