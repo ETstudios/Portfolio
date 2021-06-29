@@ -13,11 +13,6 @@
 	$tags = $projects->ListTags();
 	$jobs = $experiences->ListJobs();
 	$education = $experiences->ListEducation();
-
-	/* To-Do: 
-		Header profile photo
-		About profile photo
-	*/
 ?>
 <!doctype html>
 <html lang="en">
